@@ -1,0 +1,23 @@
+Questions
+
+1. Take numbers and store them in a list. Print the list in reverse order.
+Test cases:-
+    l1=[1,2,3,4,5] output:[5,4,3,2,1,]
+    l1=[20,70,90] output:[90,70,20]
+    l1=[] output:[]
+    l1=[2] output:[2]
+
+2. Given a list of a marks, count how many studenst acored:
+-above 75
+-below 40
+Test cases:-
+    l1=[20,40,32,86,56,98] 
+    output: above 75 - 2
+            below 40 - 2
+    l1=[39,20,15]
+    output: above 75 - 0
+            below 40 - 2
+
+3.Given a list of numbers. Find how many of them are positive amd how many of them are negative.
+Test cases:-
+    
