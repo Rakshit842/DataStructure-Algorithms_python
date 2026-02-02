@@ -22,6 +22,8 @@ for curValue in arr1:
 print("second maximum number is", secondmax)
 
 
+
+# Assignment Q2
 arr=[5,6]
 sum=0
 product=1
