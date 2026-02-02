@@ -20,3 +20,13 @@ for curValue in arr1:
     elif curValue > secondmax:
         secondmax = curValue
 print("second maximum number is", secondmax)
+
+
+arr=[5,6]
+sum=0
+product=1
+for i in range(len(arr)):
+    sum=sum+arr[i]
+    product=arr[i]*product
+print(sum)
+print(product)
