@@ -24,7 +24,6 @@ for row in transpose:
     print(*row)
 
 
-
 #Rotation of matrix anit-clockwise
 matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
 
