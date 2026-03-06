@@ -22,5 +22,5 @@ for i in range(row):
     matrix.append(row)
 
 print("Matrix: ")
-for r in matrix: 
+for r in matrix:  
     print(r)
