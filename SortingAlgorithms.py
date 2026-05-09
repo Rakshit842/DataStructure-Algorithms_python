@@ -1,63 +1,64 @@
 # Bubble sort
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        swapped = False
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                swapped = True
-        if not swapped:   # already sorted, early exit
-            break
-    return arr
+def bubbleSort(nums):
+    n = len(nums)
 
-# Test
-print(bubble_sort([64, 34, 25, 12, 22, 11, 90]))
-# Output: [11, 12, 22, 25, 34, 64, 90]
+    for i in range(n):
+        isSwap = False
+        for j in range(n-i-1):
+            if nums[j]>nums[j+1]:
+                temp = nums[j]
+                nums[j] = nums[j+1]
+                nums[j+1] = temp
+                isSwap = True
+
+            if not isSwap:
+                break
+
+    return nums 
 
 
 # selection sort
-def selection_sort(arr):
-    n = len(arr)
+def selection_sort(nums):
+    n = len(nums)
+
     for i in range(n):
-        min_idx = i
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_idx]:
-                min_idx = j
-        # Swap minimum to current position
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]
-    return arr
+        mn = nums[i]
+        ind = i
+        for j in range(i+1, n):
+            if nums[j]<mn:
+                mn = nums[j]
+                ind = j
 
-# Test
-print(selection_sort([64, 25, 12, 22, 11]))
-# Output: [11, 12, 22, 25, 64]
+        temp = nums[i]
+        nums[i] = nums[ind]
+        nums[ind] = temp
+    return nums 
 
+            
 
 # insertion sort
-def insertion_sort(arr):
-    for i in range(1, len(arr)):
-        key = arr[i]       # element to be placed
-        j = i - 1
-        # Shift elements greater than key one position right
-        while j >= 0 and arr[j] > key:
-            arr[j + 1] = arr[j]
-            j -= 1
-        arr[j + 1] = key
-    return arr
+def insertionSort(nums):
+    n = len(nums)
 
-# Test
-print(insertion_sort([12, 11, 13, 5, 6]))
-# Output: [5, 6, 11, 12, 13]
+    for i in range(1,n):
+        key = nums[i]
+        j = i-1
+        while j>=0 and nums[j]>key:
+            nums[j+1]=nums[j]
+            j-=1
+        nums[j+1] = key
+
+    return nums
 
 
 # Merge sort
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
+def merge_sort(nums):
+    if len(nums) <= 1:
+        return nums
 
-    mid = len(arr) // 2
-    left  = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
+    mid = len(nums) // 2
+    left  = merge_sort(nums[:mid])
+    right = merge_sort(nums[mid:])
     return merge(left, right)
 
 def merge(left, right):
