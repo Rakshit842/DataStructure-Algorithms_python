@@ -71,7 +71,7 @@ for i in range(k-1):
 
 curr.next = curr.next.next 
 
-# DOUBLY LINKEDLIST\
+# DOUBLY LINKEDLIST
 class Node:
     def __init__(self, data):
         self.data = data
@@ -97,4 +97,30 @@ while True:
     curr = curr.next
     if curr==head:
         break
+ 
+# Middle node
+def MiddleNode():
+    curr = head
 
+    l=0
+    while curr != None:
+        curr = curr.next
+        l+=1
+
+    curr = head
+    for i in range(l//2):
+        curr = curr.next
+
+    return curr
+
+
+# Slow and fast pointer middle pointer 
+def FastSlowPointer():
+    slow = head 
+    fast = head 
+
+    while fast!=None and fast.next!=None:
+        fast = fast.next.next
+        slow = slow.next
+
+    return slow
