@@ -1,4 +1,4 @@
-# Bubble sort
+# Bubble sort [(O(n^2))]
 def bubbleSort(nums):
     n = len(nums)
 
@@ -17,7 +17,7 @@ def bubbleSort(nums):
     return nums 
 
 
-# selection sort
+# selection sort[(o(n^2))]
 def selection_sort(nums):
     n = len(nums)
 
@@ -36,7 +36,7 @@ def selection_sort(nums):
 
             
 
-# insertion sort
+# insertion sort[(o(n^2))]
 def insertionSort(nums):
     n = len(nums)
 
@@ -51,7 +51,7 @@ def insertionSort(nums):
     return nums
 
 
-# Merge sort
+# Merge sort[o(n log(n))]
 def merge_sort(nums):
     if len(nums) <= 1:
         return nums
@@ -78,7 +78,7 @@ print(merge_sort([38, 27, 43, 3, 9, 82, 10]))
 # Output: [3, 9, 10, 27, 38, 43, 82]
 
 
-# Quick sort
+# Quick sort[(o(n^2))]
 def quick_sort(arr, low=0, high=None):
     if high is None:
         high = len(arr) - 1
@@ -103,27 +103,44 @@ print(quick_sort([10, 7, 8, 9, 1, 5]))
 # Output: [1, 5, 7, 8, 9, 10]
 
 
-# Counting sort
-def counting_sort(arr):
-    if not arr:
-        return arr
+# Counting sort[(O(mx))]
+def counting_sort(nums):
+    n = len(nums)
+    mx = max(nums)
 
-    max_val = max(arr)
-    min_val = min(arr)
-    k = max_val - min_val + 1
+    freq = [0]*(mx+1)
 
-    # Step 1: count occurrences
-    count = [0] * k
-    for num in arr:
-        count[num - min_val] += 1
+    for i in nums:
+        freq[i]+=1
 
-    # Step 2: rebuild sorted array
-    result = []
-    for i, freq in enumerate(count):
-        result.extend([i + min_val] * freq)
-    return result
+    nums=[]
 
-# Test
-print(counting_sort([4, 2, 2, 8, 3, 3, 1]))
-# Output: [1, 2, 2, 3, 3, 4, 8]
-# k = range of values, n = number of elements
+    for i in range(0, mx+1):
+        while freq[i]>0:
+            nums.append(i)
+            freq[i]-=1
+
+    return nums    
+
+# two pointer sorting
+def two_points(nums):
+    left = 0
+    right = len(nums) - 1
+    i = 0
+
+    while i <= right:
+        if nums[i] == 1:
+            i+=1
+        elif nums[i] == 0:
+            temp = nums[i]
+            nums[i] = nums[left]
+            nums[left] = temp 
+            i += 1
+            left += 1
+
+        else:
+            temp = nums[i]
+            nums[i] = nums[right]
+            nums[right] = temp 
+            right -= 1
+
