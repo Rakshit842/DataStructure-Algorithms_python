@@ -255,13 +255,7 @@ def plus_one(digits):
 
 # 20.Rotate array by K
 def rotate_array(arr, k):
-
     n = len(arr)
-
-    # Handle cases where k > n
     k = k % n
-
-    # Rotate array
     rotated = arr[-k:] + arr[:-k]
-
     return rotated
