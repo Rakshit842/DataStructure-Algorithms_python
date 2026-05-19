@@ -60,7 +60,7 @@ curr = head
 while curr.next.next != None:
     curr = curr.next
 
-curr.next = None
+curr.next = None 
 printLinkedList(head)
 
 # Delete at Kth index

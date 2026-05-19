@@ -32,6 +32,12 @@ def is_palindrome(n):
 
     return original == reverse
 
+n = 121
+if is_palindrome(n):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
 # 4.Given an integer n, check whether it is an Armstrong number.
 def is_armstrong(n):
     original = n

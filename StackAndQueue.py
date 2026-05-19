@@ -82,3 +82,70 @@ class Stack:
         return self.length
 
 
+# Queue Operations using List in Python
+class Queue:
+    def __init__(self):
+        self.queue = []
+
+    # Enqueue operation
+    def enqueue(self, value):
+        self.queue.append(value)
+        print(value, "inserted into queue")
+
+    # Dequeue operation
+    def dequeue(self):
+        if self.is_empty():
+            print("Queue is empty")
+        else:
+            print(self.queue.pop(0), "removed from queue")
+
+    # Front element
+    def front(self):
+        if self.is_empty():
+            print("Queue is empty")
+        else:
+            print("Front element is:", self.queue[0])
+
+    # Rear element
+    def rear(self):
+        if self.is_empty():
+            print("Queue is empty")
+        else:
+            print("Rear element is:", self.queue[-1])
+
+    # Check if queue is empty
+    def is_empty(self):
+        return len(self.queue) == 0
+
+    # Size of queue
+    def size(self):
+        print("Size of queue:", len(self.queue))
+
+    # Display queue
+    def display(self):
+        if self.is_empty():
+            print("Queue is empty")
+        else:
+            print("Queue elements:", self.queue)
+
+
+# Driver Code
+q = Queue()
+
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+
+q.display()
+
+q.front()
+
+q.rear()
+
+q.dequeue()
+
+q.display()
+
+q.size()
+
+print("Is queue empty?", q.is_empty())
