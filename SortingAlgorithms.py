@@ -17,7 +17,7 @@ def bubbleSort(nums):
     return nums 
 
 
-# selection sort[(o(n^2))]
+# selection sort[(O(n^2))]
 def selection_sort(nums):
     n = len(nums)
 
@@ -36,7 +36,7 @@ def selection_sort(nums):
 
             
 
-# insertion sort[(o(n^2))]
+# insertion sort[(O(n^2))]
 def insertionSort(nums):
     n = len(nums)
 
@@ -51,7 +51,7 @@ def insertionSort(nums):
     return nums
 
 
-# Merge sort[o(n log(n))]
+# Merge sort[O(n log(n))]
 def merge_sort(nums):
     if len(nums) <= 1:
         return nums
@@ -78,7 +78,7 @@ print(merge_sort([38, 27, 43, 3, 9, 82, 10]))
 # Output: [3, 9, 10, 27, 38, 43, 82]
 
 
-# Quick sort[(o(n^2))]
+# Quick sort[(O(n^2))]
 def quick_sort(arr, low=0, high=None):
     if high is None:
         high = len(arr) - 1
