@@ -86,5 +86,3 @@ dll = DoublyLinkedList()
 dll.insertAtfirstPosition("Rohit")
 dll.insertAtfirstPosition("Mehak")
 dll.traversal()
-
-
