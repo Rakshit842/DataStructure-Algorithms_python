@@ -34,7 +34,6 @@ def bfs(graph, start):
 
 
 
-
 # Driver Code
 print("BFS Traversal:")
 bfs(graph, 1)
