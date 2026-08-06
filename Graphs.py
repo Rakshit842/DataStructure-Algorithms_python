@@ -32,6 +32,8 @@ def bfs(graph, start):
                 queue.append(neighbor)
 
 
+
+
 # Driver Code
 print("BFS Traversal:")
 bfs(graph, 1)
